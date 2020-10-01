@@ -15,6 +15,7 @@ git clone https://github.com/hiQbit/uniSite.git
 
 ```
 cd uniSite
+# 需要安装php composer支持
 composer update
 ```
 
@@ -23,6 +24,9 @@ composer update
 ```
 git clone https://github.com/hiQbit/uniAdmin.git
 cd uniAdmin
+# 切换到 v1.0 版本
+git checkout v1.0.0
+# 需要安装 nodejs 环境
 npm install
 # 根据 uniAdmin 安装说明完成配置
 ```
