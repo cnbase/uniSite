@@ -11,6 +11,11 @@
 git clone https://github.com/hiQbit/uniSite.git
 ```
 
+- 配置数据库
+
+    - 导入数据库文件 `SQL_uni_site.sql`
+    - 配置数据库参数 `/config/app.php`
+
 - **安装 uniPHP 核心框架**
 
 ```
