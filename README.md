@@ -2,6 +2,7 @@
 采用 uniPHP+uniAdmin 搭建的带后台管理的网站框架
 
 - 100%前后端分离
+- 后台管理暂无菜单及权限管理功能，需要数据库手动添加
 
 ### 安装说明
 
@@ -15,6 +16,7 @@ git clone https://github.com/hiQbit/uniSite.git
 
     - 导入数据库文件 `SQL_uni_site.sql`
     - 配置数据库参数 `/config/app.php`
+    - 后台登录账号：admin/admin
 
 - **安装 uniPHP 核心框架**
 
