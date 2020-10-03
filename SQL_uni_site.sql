@@ -40,7 +40,7 @@ INSERT INTO `auth` (`id`, `title`, `url`, `pid`, `module_id`, `sort_no`, `status
 
 -- 导出  表 uni_site.menu 结构
 CREATE TABLE IF NOT EXISTS `menu` (
-  `id` int unsigned NOT NULL DEFAULT '0',
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '菜单名称',
   `url` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '菜单url',
   `icon` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '菜单图标',
@@ -59,6 +59,8 @@ CREATE TABLE IF NOT EXISTS `menu` (
 -- 正在导出表  uni_site.menu 的数据：~0 rows (大约)
 DELETE FROM `menu`;
 /*!40000 ALTER TABLE `menu` DISABLE KEYS */;
+INSERT INTO `menu` (`id`, `title`, `url`, `icon`, `pid`, `module_id`, `sort_no`, `status`) VALUES
+	(1, '后台主页', '/home.html', 'el-icon-trophy', 0, 1, 0, 1);
 /*!40000 ALTER TABLE `menu` ENABLE KEYS */;
 
 -- 导出  表 uni_site.module 结构
@@ -128,6 +130,7 @@ CREATE TABLE IF NOT EXISTS `user_menu` (
 -- 正在导出表  uni_site.user_menu 的数据：~0 rows (大约)
 DELETE FROM `user_menu`;
 /*!40000 ALTER TABLE `user_menu` DISABLE KEYS */;
+INSERT INTO `user_menu` (`id`, `user_id`, `menu_id`) VALUES (1, 1, 1);
 /*!40000 ALTER TABLE `user_menu` ENABLE KEYS */;
 
 -- 导出  表 uni_site.user_token 结构
@@ -139,13 +142,11 @@ CREATE TABLE IF NOT EXISTS `user_token` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `token` (`token`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='用户登录token';
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='用户登录token';
 
 -- 正在导出表  uni_site.user_token 的数据：~0 rows (大约)
 DELETE FROM `user_token`;
 /*!40000 ALTER TABLE `user_token` DISABLE KEYS */;
-INSERT INTO `user_token` (`id`, `user_id`, `token`, `token_time`) VALUES
-	(2, 1, 'fd3f4ddb9392fdc204f4d5fa59cc355ea46772dd', 1601620183);
 /*!40000 ALTER TABLE `user_token` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

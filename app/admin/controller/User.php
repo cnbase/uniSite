@@ -43,7 +43,7 @@ class User extends Api
      */
     public function logout()
     {
-        $res = $this->pdo->execute("delete from `user_token` where id = :user_id",[':user_id'=>$this->user_id]);
+        $res = $this->pdo->execute("delete from `user_token` where user_id = :user_id",[':user_id'=>$this->user_id]);
         if (!$res){
             appJson(5004,'失败');
         } else {
