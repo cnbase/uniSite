@@ -2,7 +2,12 @@
 采用 uniPHP+uniHTML 搭建的带后台管理的网站框架
 
 - 100%前后端分离
-- 后台管理暂无菜单及权限管理功能，需要数据库手动添加
+- 后台包含RBAC权限管理
+- 功能：登录页、用户管理、菜单、权限、角色、权限分配等
+
+### 后台主题预览
+
+请查看 `previews/` 目录
 
 ### 安装说明
 
@@ -28,7 +33,7 @@ composer update
 
 - **基于 uniHTML 构建前后台**
 
-    - 页面基于 `uniHTML v1.0` 版本构建
+    - 页面基于 `uniHTML v2.0` 版本构建
     - 仓库地址：https://github.com/hiQbit/uniHTML
     - 请详细阅读uniHTML相关文档，完成业务端页面的开发
   
@@ -37,8 +42,8 @@ composer update
     ```
     git clone https://github.com/hiQbit/uniHTML
     cd uniHTML
-    # 切换到 v1.0 或 更高版本
-    git checkout -b v1.0.0
+    # 切换到 v2.0 或 更高版本
+    git checkout -b v2.0.0
     # 需要安装 nodejs 环境
     npm install
     # 根据 uniHTML 安装说明完成配置

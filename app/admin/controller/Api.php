@@ -40,7 +40,13 @@ class Api extends ApiBase
          */
         $Router = \uniPHP::use('Router');
         $auth_url = $Router->rule;
-        $auth = $this->pdo->one("select ua.id from `user_auth` ua join `auth` a on ua.auth_id = a.id where ua.user_id = :user_id and a.url = :url and a.`status` = 1 and a.module_id = :module_id",[':user_id'=>$this->user_id,':url'=>$auth_url,':module_id'=>$this->module_id]);
+        $sql = "select a.`id` from `auth` as a join `role_auth` as ra on ra.`auth_id` = a.`id` join `user_role` as ur on ur.`role_id` = ra.`role_id` join `role` as r on r.`id` = ur.`role_id` where a.`status` = 1 and a.`module_id` = :module_id and r.`status` = 1 and a.`url` = :url and ur.`user_id` = :user_id";
+        $bind = [
+            ':user_id'=>$this->user_id,
+            ':url'=>$auth_url,
+            ':module_id'=>$this->module_id
+        ];
+        $auth = $this->pdo->one($sql,$bind);
         if (!$auth){
             appJson(5003,'无权访问');
         }
