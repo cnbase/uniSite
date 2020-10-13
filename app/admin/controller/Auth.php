@@ -60,6 +60,9 @@ class Auth extends Api
         $pid = $pre_ids?explode(',',$pre_ids):[];
         $pid = $pid?end($pid):0;
         if ($id){
+            if ($id == $pid){
+                appJson(5007,'所选父级错误');
+            }
             //编辑
             $auth = $this->pdo->one("select `id`,`pid`,`pre_ids` from auth where `module_id` = :module_id and `id` = :id",[':module_id'=>$this->module_id,':id'=>$id]);
             if (!$auth){
