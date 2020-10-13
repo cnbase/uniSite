@@ -293,13 +293,13 @@ class User extends Api
         }
         //2.删除该用户关联角色
         $res = $this->pdo->execute("delete from `user_role` where `user_id` = :user_id",$bind);
-        if (!$res){
+        if ($res === false){
             $this->pdo->rollback();
             appJson(5002,'操作失败'.$this->pdo->error());
         }
         //3.删除用户登录token
         $res = $this->pdo->execute("delete from `user_token` where `user_id` = :user_id",$bind);
-        if (!$res){
+        if ($res === false){
             $this->pdo->rollback();
             appJson(5002,'操作失败'.$this->pdo->error());
         }

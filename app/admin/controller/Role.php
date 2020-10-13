@@ -91,18 +91,18 @@ class Role extends Api
         }
         //删除角色所属权限及菜单
         $res = $this->pdo->execute("delete from `role_auth` where `role_id` = :id",$bind);
-        if (!$res){
+        if ($res === false){
             $this->pdo->rollback();
             appJson(5003,'删除关联权限失败');
         }
         $res = $this->pdo->execute("delete from `role_menu` where `role_id` = :id",$bind);
-        if (!$res){
+        if ($res === false){
             $this->pdo->rollback();
             appJson(5004,'删除关联菜单失败');
         }
         //删除关联的用户
         $res = $this->pdo->execute("delete from `user_role` where `role_id` = :id",$bind);
-        if (!$res){
+        if ($res === false){
             $this->pdo->rollback();
             appJson(5002,'删除关联用户失败');
         }
