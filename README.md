@@ -14,7 +14,7 @@
 - **下载 `uniSite` 项目**
 
 ```
-git clone https://github.com/hiQbit/uniSite.git
+git clone https://github.com/ibzero/uniSite.git
 ```
 
 - 配置数据库
@@ -26,24 +26,24 @@ git clone https://github.com/hiQbit/uniSite.git
 - **安装 uniPHP 核心框架**
 
 ```
+# 进入项目目录
 cd uniSite
 # 需要安装php composer支持
 composer update
 ```
 
-- **基于 uniHTML 构建前后台**
+- **安装 uniHTML 构建前后台静态页面**
 
     - 页面基于 `uniHTML v2.0` 版本构建
-    - 仓库地址：https://github.com/hiQbit/uniHTML
+    - 仓库地址：https://github.com/ibzero/uniHTML
     - 请详细阅读uniHTML相关文档，完成业务端页面的开发
   
     **安装注意事项：**
     
     ```
-    git clone https://github.com/hiQbit/uniHTML
+    git clone -b v2.0 --depth=1 https://github.com/ibzero/uniHTML
+    # 进入uniHTML目录
     cd uniHTML
-    # 切换到 v2.0 或 更高版本
-    git checkout -b v2.0.0
     # 需要安装 nodejs 环境
     npm install
     # 根据 uniHTML 安装说明完成配置
