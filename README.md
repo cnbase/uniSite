@@ -34,14 +34,14 @@ composer update
 
 - **安装 uniHTML 构建前后台静态页面**
 
-    - 页面基于 `uniHTML v2.0` 版本构建
+    - 页面基于 `uniHTML v2.0.2` 版本构建
     - 仓库地址：https://github.com/ibzero/uniHTML
     - 请详细阅读uniHTML相关文档，完成业务端页面的开发
   
     **安装注意事项：**
     
     ```
-    git clone -b v2.0 --depth=1 https://github.com/ibzero/uniHTML
+    git clone -b v2.0.2 --depth=1 https://github.com/ibzero/uniHTML
     # 进入uniHTML目录
     cd uniHTML
     # 需要安装 nodejs 环境
